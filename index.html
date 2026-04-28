@@ -1,0 +1,135 @@
+ (cd "$(git rev-parse --show-toplevel)" && git apply --3way <<'EOF' 
+diff --git a/index.html b/index.html
+new file mode 100644
+index 0000000000000000000000000000000000000000..efddaea9a08e7a77033e67b8451c6f2ff7146f32
+--- /dev/null
++++ b/index.html
+@@ -0,0 +1,125 @@
++<!DOCTYPE html>
++<html lang="en">
++  <head>
++    <meta charset="UTF-8" />
++    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
++    <title>North South University Admissions</title>
++    <meta
++      name="description"
++      content="Official admissions portal for North South University. Apply online, check deadlines, review requirements, and contact admissions support."
++    />
++    <link rel="stylesheet" href="styles.css" />
++  </head>
++  <body>
++    <header class="topbar">
++      <div class="container topbar-inner">
++        <p class="brand">North South University Admissions</p>
++        <p class="updated" id="updatedDate">Last updated: </p>
++      </div>
++    </header>
++
++    <main>
++      <section class="hero container">
++        <h1>Start Your Admission Journey with Confidence</h1>
++        <p>
++          Everything you need in one place: applications, deadlines, results,
++          required documents, and support.
++        </p>
++        <div class="cta-grid">
++          <a href="#apply" class="btn primary">Apply Undergraduate</a>
++          <a href="#apply" class="btn primary">Apply Graduate</a>
++          <a href="#results" class="btn secondary">Check Results</a>
++          <a href="#fees" class="btn secondary">Fees & Scholarships</a>
++        </div>
++      </section>
++
++      <section class="status container card" aria-labelledby="status-title">
++        <h2 id="status-title">Admission Cycle Status</h2>
++        <ul class="timeline">
++          <li><span>Applications Open</span><strong>May 15, 2026</strong></li>
++          <li><span>Applications Close</span><strong>July 10, 2026</strong></li>
++          <li><span>Admission Test</span><strong>July 24, 2026</strong></li>
++          <li><span>Result Publication</span><strong>August 1, 2026</strong></li>
++        </ul>
++      </section>
++
++      <section id="apply" class="container card" aria-labelledby="apply-title">
++        <h2 id="apply-title">How to Apply</h2>
++        <ol class="steps">
++          <li>Create your admissions account.</li>
++          <li>Fill in personal and academic information.</li>
++          <li>Upload required documents.</li>
++          <li>Pay the application fee online.</li>
++          <li>Track your status from your dashboard.</li>
++        </ol>
++      </section>
++
++      <section class="container two-col">
++        <article class="card" id="requirements" aria-labelledby="requirements-title">
++          <h2 id="requirements-title">Required Documents</h2>
++          <ul>
++            <li>Recent passport-size photo</li>
++            <li>Academic transcripts/certificates</li>
++            <li>National ID or passport copy</li>
++            <li>Program-specific supporting files</li>
++          </ul>
++        </article>
++
++        <article class="card" id="fees" aria-labelledby="fees-title">
++          <h2 id="fees-title">Fees & Scholarships</h2>
++          <ul>
++            <li>Application fee information</li>
++            <li>Merit-based scholarship criteria</li>
++            <li>Need-based aid guidance</li>
++            <li>Payment methods and deadlines</li>
++          </ul>
++        </article>
++      </section>
++
++      <section id="results" class="container card" aria-labelledby="results-title">
++        <h2 id="results-title">Results & Notices</h2>
++        <p>
++          Use your application ID and date of birth to check results and
++          verification notices.
++        </p>
++        <form class="results-form" onsubmit="event.preventDefault(); alert('Demo form: connect this to your admissions backend.');">
++          <label>
++            Application ID
++            <input type="text" required />
++          </label>
++          <label>
++            Date of Birth
++            <input type="date" required />
++          </label>
++          <button class="btn primary" type="submit">Check Status</button>
++        </form>
++      </section>
++
++      <section class="container two-col">
++        <article class="card" aria-labelledby="support-title">
++          <h2 id="support-title">Admissions Support</h2>
++          <p>Email: admissions@northsouth.edu</p>
++          <p>Hotline: +880-2-XXXXXXX</p>
++          <p>Office hours: Sun–Thu, 9:00 AM–5:00 PM</p>
++          <p>Response target: within 1 working day</p>
++        </article>
++
++        <article class="card warning" aria-labelledby="fraud-title">
++          <h2 id="fraud-title">Fraud Prevention Notice</h2>
++          <p>
++            Only trust information from official NSU channels. Never share OTPs
++            or payment credentials with unauthorized persons.
++          </p>
++        </article>
++      </section>
++    </main>
++
++    <footer class="footer">
++      <div class="container">
++        <p>© 2026 North South University Admissions. All rights reserved.</p>
++      </div>
++    </footer>
++
++    <script src="script.js"></script>
++  </body>
++</html>
+ 
+EOF
+)
