@@ -1,0 +1,183 @@
+ (cd "$(git rev-parse --show-toplevel)" && git apply --3way <<'EOF' 
+diff --git a/styles.css b/styles.css
+new file mode 100644
+index 0000000000000000000000000000000000000000..52b4c47eff7b748a0f6dc618eb75bfd176147f07
+--- /dev/null
++++ b/styles.css
+@@ -0,0 +1,173 @@
++:root {
++  --bg: #f3f6fb;
++  --text: #1f2937;
++  --primary: #0b3d91;
++  --primary-dark: #072b67;
++  --accent: #e8f0ff;
++  --card: #ffffff;
++  --muted: #6b7280;
++  --warning: #fff7ed;
++}
++
++* {
++  box-sizing: border-box;
++}
++
++body {
++  margin: 0;
++  font-family: Inter, system-ui, -apple-system, Segoe UI, Roboto, sans-serif;
++  background: var(--bg);
++  color: var(--text);
++  line-height: 1.55;
++}
++
++.container {
++  width: min(1080px, 92%);
++  margin: 0 auto;
++}
++
++.topbar {
++  background: var(--primary);
++  color: #fff;
++  padding: 0.65rem 0;
++}
++
++.topbar-inner {
++  display: flex;
++  justify-content: space-between;
++  align-items: center;
++  gap: 1rem;
++  flex-wrap: wrap;
++}
++
++.brand {
++  font-weight: 700;
++  margin: 0;
++}
++
++.updated {
++  margin: 0;
++  font-size: 0.92rem;
++  opacity: 0.95;
++}
++
++.hero {
++  padding: 3rem 0 2rem;
++}
++
++.hero h1 {
++  font-size: clamp(1.7rem, 4vw, 2.5rem);
++  margin-bottom: 0.5rem;
++}
++
++.hero p {
++  margin-top: 0;
++  color: var(--muted);
++}
++
++.cta-grid {
++  display: grid;
++  grid-template-columns: repeat(auto-fit, minmax(210px, 1fr));
++  gap: 0.75rem;
++  margin-top: 1.2rem;
++}
++
++.btn {
++  display: inline-block;
++  text-align: center;
++  text-decoration: none;
++  border-radius: 0.6rem;
++  padding: 0.75rem 1rem;
++  font-weight: 600;
++  border: 1px solid transparent;
++  cursor: pointer;
++}
++
++.primary {
++  background: var(--primary);
++  color: #fff;
++}
++
++.primary:hover {
++  background: var(--primary-dark);
++}
++
++.secondary {
++  background: var(--accent);
++  color: var(--primary-dark);
++  border-color: #bfd2ff;
++}
++
++.card {
++  background: var(--card);
++  border-radius: 0.85rem;
++  padding: 1.2rem;
++  box-shadow: 0 6px 24px rgba(20, 30, 70, 0.08);
++  margin-bottom: 1rem;
++}
++
++.timeline {
++  list-style: none;
++  padding: 0;
++  margin: 0;
++}
++
++.timeline li {
++  display: flex;
++  justify-content: space-between;
++  padding: 0.55rem 0;
++  border-bottom: 1px solid #edf1f7;
++  gap: 1rem;
++}
++
++.timeline li:last-child {
++  border-bottom: none;
++}
++
++.steps {
++  margin: 0;
++  padding-left: 1.25rem;
++}
++
++.two-col {
++  display: grid;
++  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
++  gap: 1rem;
++}
++
++.results-form {
++  display: grid;
++  grid-template-columns: 1fr 1fr auto;
++  gap: 0.7rem;
++  align-items: end;
++}
++
++.results-form label {
++  display: grid;
++  gap: 0.35rem;
++  font-weight: 500;
++}
++
++input {
++  border: 1px solid #cbd5e1;
++  border-radius: 0.45rem;
++  padding: 0.58rem;
++}
++
++.warning {
++  background: var(--warning);
++}
++
++.footer {
++  margin-top: 2rem;
++  padding: 1rem 0;
++  background: #0f172a;
++  color: #cfd7e7;
++  font-size: 0.92rem;
++}
++
++@media (max-width: 760px) {
++  .results-form {
++    grid-template-columns: 1fr;
++  }
++}
+ 
+EOF
+)
